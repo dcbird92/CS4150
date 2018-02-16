@@ -56,10 +56,8 @@ def main():
     j = 0
     while j < friendsTotal:
         friend1, friend2 = input().split(" ")
-        if friend2 not in students[friend1]:
-            students[friend1].append(friend2)
-        if friend1 not in students[friend2]:
-            students[friend2].append(friend1)
+        students[friend1].append(friend2)
+        students[friend2].append(friend1)
         j = j + 1
     rumorsTotal = int(input())
     x = 0
