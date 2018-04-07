@@ -1,5 +1,6 @@
 from collections import defaultdict
 import heapq
+import cProfile
 
 class Graph:
     def __init__(self):
@@ -24,8 +25,11 @@ def dijkstra(g: Graph, start: str, n: int):
     xheappush = heapq.heappush
     xheappop = heapq.heappop
     xheapify = heapq.heapify
+    # last corridor
     end = str(n - 1)
+    # start of distance array
     distance = {start: float(-1.0)}
+    # declare the binary heap
     pq = []
     xheapify(pq)
     xheappush(pq, (-1.0, start))
